@@ -41,15 +41,18 @@ pnpm run preview
 FORGE deploy SCRIPT:
 
 ```bash
-cd /home/forge/example.com
+cd $FORGE_SITE_PATH
 git reset -- hard origin/$FORGE_SITE_BRANCH
 git pull origin $FORGE_SITE_BRANCH
 pnpm i
 npx prisma generate
 npx prisma migrate deploy
-pnpm build 
+pnpm build
 
-sudo supervisorctl restart daemon-9999:daemon-9999_00
+pm2 delete "$FORGE_SITE_ID" 2>&1 || :
+
+PORT=$PORT DATABASE_URL=$DATABASE_URL pm2 start '.output/server/index.mjs' --name "$FORGE_SITE_ID" -- --watch
+
 ```
 
 Apply Prisma migrations:

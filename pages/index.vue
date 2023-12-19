@@ -1,7 +1,7 @@
 <template>
   <NaiveConfig>
     <div class="h-screen flex justify-center items-center">
-      <NButton>Hello</NButton>
+      <NButton>Hello 2</NButton>
     </div>
   </NaiveConfig>
 </template>
