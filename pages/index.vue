@@ -3,7 +3,7 @@
     <div class="h-screen flex justify-center items-center flex-col gap-2">
       <NButton type="primary"><div class="i-mdi:access-point" /></NButton>
       <NAlert class="w-2xl" type="info">
-        <pre>  {{ store }}</pre>
+        <pre>  {{ store.$state }}</pre>
       </NAlert>
     </div>
   </NaiveConfig>
