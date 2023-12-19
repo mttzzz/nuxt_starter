@@ -51,3 +51,10 @@ pnpm build
 
 sudo supervisorctl restart daemon-9999:daemon-9999_00
 ```
+
+Apply Prisma migrations:
+
+```bash
+npx prisma migrate dev --name changePostTitle
+```
+
