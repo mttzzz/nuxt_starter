@@ -49,15 +49,15 @@ npx prisma generate
 npx prisma migrate deploy
 pnpm build
 
-pm2 delete "$FORGE_SITE_ID" 2>&1 || :
+pm2 delete "$(basename $FORGE_SITE_PATH)" 2>&1 || :
 
-PORT=$PORT DATABASE_URL=$DATABASE_URL pm2 start '.output/server/index.mjs' --name "$FORGE_SITE_ID" -- --watch
+PORT=$PORT DATABASE_URL=$DATABASE_URL pm2 start '.output/server/index.mjs' --name "$(basename $FORGE_SITE_PATH)" -- --watch
 
 ```
 
 Apply Prisma migrations:
 
 ```bash
-npx prisma migrate dev --name changePostTitle
+npx prisma migrate dev --name exampleName
 ```
 
