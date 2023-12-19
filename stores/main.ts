@@ -3,7 +3,7 @@ type MainStore = {
   example: number
 }
 
-export const useAlertsStore = defineStore('main', {
+export const useMainStore = defineStore('main', {
   state: (): MainStore => ({
     example: 1,
   }),
