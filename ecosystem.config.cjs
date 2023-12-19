@@ -3,8 +3,9 @@ module.exports = {
     {
       name: 'nuxt-starter',
       exec_mode: 'cluster',
+      port: process.env.PORT,
       instances: 1,
-      script: 'env-cmd node ./.output/server/index.mjs',
+      script: './.output/server/index.mjs',
     },
   ],
 }
