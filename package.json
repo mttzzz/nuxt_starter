@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "serve": "env-cmd node .output/server/index.mjs"
+    "serve": ".output/server/index.mjs"
   },
   "devDependencies": {
     "@bg-dev/nuxt-naiveui": "^1.7.2",
