@@ -1,0 +1,16 @@
+.git
+.github
+.nuxt
+.output
+.vscode
+.idea
+node_modules
+
+
+
+
+.env
+.eslintrc
+.gitignore
+.prettierrc
+README.md

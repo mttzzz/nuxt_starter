@@ -20,7 +20,7 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.10.3",
     "prettier": "^3.1.1",
     "prisma": "^5.7.1",
     "vue": "^3.3.12",
@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
-    "@prisma/client": "5.7.1"
+    "@prisma/client": "^5.7.1"
   }
 }

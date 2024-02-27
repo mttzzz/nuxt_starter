@@ -18,7 +18,7 @@ Start the development server on `http://localhost:3000`:
 ```bash
 
 # pnpm
-pnpm run dev
+pnpm dev
 ```
 
 ## Production
@@ -27,31 +27,14 @@ Build the application for production:
 
 ```bash
 # pnpm
-pnpm run build
+pnpm build
 ```
 
 Locally preview production build:
 
 ```bash
 # pnpm
-pnpm run preview
-
-```
-
-FORGE deploy SCRIPT:
-
-```bash
-cd $FORGE_SITE_PATH
-git reset -- hard origin/$FORGE_SITE_BRANCH
-git pull origin $FORGE_SITE_BRANCH
-pnpm i
-npx prisma generate
-npx prisma migrate deploy
-pnpm build
-
-pm2 delete "$(basename $FORGE_SITE_PATH)" 2>&1 || :
-
-PORT=$PORT DATABASE_URL=$DATABASE_URL pm2 start '.output/server/index.mjs' --name "$(basename $FORGE_SITE_PATH)" -- --watch
+pnpm preview
 
 ```
 
