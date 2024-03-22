@@ -11,10 +11,11 @@
     "ignorePatterns": ["*.md"],
     "overrides": [
       {
-          "files": "*.json",
-          "rules": {
-            "no-unused-expressions": "off"
-          }
+        "files": ["*.json"],
+        "parser": "eslint-plugin-json-es",
+        "extends": "plugin:eslint-plugin-json-es/recommended",
+        "rules": {
+        }
       }
   ]
   }
