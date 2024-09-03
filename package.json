@@ -1,34 +1,32 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "serve": ".output/server/index.mjs"
-  },
-  "devDependencies": {
-    "@bg-dev/nuxt-naiveui": "^1.7.2",
-    "@iconify-json/mdi": "^1.1.63",
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@types/node": "^20.10.5",
-    "@unocss/nuxt": "^0.58.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-json-es": "^1.5.7",
-    "eslint-plugin-prettier": "^5.0.1",
-    "nuxt": "^3.11.1",
-    "prettier": "^3.1.1",
-    "prisma": "^5.7.1",
-    "vue": "^3.3.12",
-    "vue-router": "^4.2.5"
+    "postinstall": "nuxt prepare && npx prisma generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "npx nuxi typecheck"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.5.1",
-    "@prisma/client": "^5.7.1"
+    "@prisma/client": "^5.19.1",
+    "nuxt": "^3.13.0",
+    "vue": "^3.4.38"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.0.0",
+    "@bg-dev/nuxt-naiveui": "2.0.0-rc.1",
+    "@iconify/json": "^2.2.243",
+    "@nuxt/eslint": "^0.5.5",
+    "@pinia/nuxt": "^0.5.4",
+    "@unocss/nuxt": "^0.62.3",
+    "eslint": "^9.9.1",
+    "prisma": "^5.19.1",
+    "typescript": "^5.5.4",
+    "unocss": "^0.62.3"
   }
 }

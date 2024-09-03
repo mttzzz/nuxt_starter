@@ -1,37 +1,34 @@
-# Этап сборки
-FROM node:20-alpine as builder
-
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
 WORKDIR /app
 
-# Установка pnpm
-RUN npm install -g pnpm
 
-
-COPY package.json pnpm-lock.yaml prisma ./
-
+# Установка Supervisor
+RUN apt-get update &&  apt-get install -y supervisor
+  
 
 # Установка зависимостей
-RUN pnpm i
+RUN pnpm install
 
-# Копирование исходного кода проекта
-COPY . .
+
+
+
+RUN npx prisma generate
 
 # Сборка приложения
 RUN pnpm build
 
-# Генерация клиента Prisma
-RUN pnpm prisma generate
 
-# Этап продакшена
-FROM node:20-alpine as prod
 
-WORKDIR /app
+# Копирование entrypoint.sh и установка прав на выполнение
+COPY ./docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-RUN npm install prisma
+EXPOSE 3000/tcp
 
-COPY --from=builder /app/node_modules/@prisma /app/node_modules/@prisma
-COPY --from=builder /app/.output /app/.output
-COPY --from=builder /app/prisma /app/prisma
+# Установка entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
 
-EXPOSE 3000
-CMD sh -c "npx prisma migrate deploy && node /app/.output/server/index.mjs"
