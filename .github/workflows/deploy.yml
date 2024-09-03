@@ -3,7 +3,7 @@ name: Main deploy workflow
 on:
   push:
     branches:
-      - main
+      - branch-name
 
 jobs:
   main:
