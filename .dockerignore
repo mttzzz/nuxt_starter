@@ -2,6 +2,7 @@
 .github
 .nuxt
 .output
+dist
 .vscode
 .idea
 node_modules
@@ -10,7 +11,5 @@ node_modules
 
 
 .env
-.eslintrc
 .gitignore
-.prettierrc
 README.md

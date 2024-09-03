@@ -5,10 +5,10 @@ RUN corepack enable
 COPY . /app
 WORKDIR /app
 
-
 # Установка Supervisor
 RUN apt-get update &&  apt-get install -y supervisor
   
+
 
 # Установка зависимостей
 RUN pnpm install
