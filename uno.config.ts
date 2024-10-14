@@ -18,9 +18,14 @@ export default defineConfig({
     colors: {
       // ...
     },
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
+    },
   },
   presets: [
-    presetUno(),
+    presetUno({ preflight: true }),
     presetAttributify(),
     presetIcons(),
     presetTypography(),

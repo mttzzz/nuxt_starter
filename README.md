@@ -43,4 +43,3 @@ Apply Prisma migrations:
 ```bash
 npx prisma migrate dev --name exampleName
 ```
-
