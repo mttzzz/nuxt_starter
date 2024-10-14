@@ -25,7 +25,6 @@
     "nuxt": "3.13.0",
     "nuxt-cron": "^1.7.0",
     "nuxtjs-naive-ui": "^1.0.2",
-    "prisma": "^5.20.0",
     "typescript": "^5.6.3",
     "unocss": "^0.63.4",
     "unplugin-auto-import": "^0.18.3",
